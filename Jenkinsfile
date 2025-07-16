@@ -1,19 +1,14 @@
 pipeline {
-    agent {
-      label 'docker-java'
-    }
-    tools{
-        maven "MAVEN_3.8.8"
-    }
-    stages {
-        stage('deploy') {
-            steps {
-                dir ('rrrr'){
-                    git 'https://github.com/spring-projects/spring-petclinic.git'
-                    sh  'mvn package'
-                }
-                
+    agent any 
+        stages {
+            stage ('Build') {
+              steps {
+                echo ("This is Gowtham")
+                   steps {
+                    echo ("")
+                   }
+              }
             }
         }
-    }
 }
+
